@@ -79,14 +79,20 @@
                 <div class="main-card mb-3 card">
                     <div class="card-body">
                         <div class="text-center">
-                            @include('admin.skp.index_partial.button')
+                            @if(auth()->user()->level == 'ADMIN')
+                                <a href="/it/skp/belum"><button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info">Pegawai yang Belum Mengisi SKP</button></a>
+                                <a href="/it/skp/sudah"><button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info active">Pegawai yang Sudah Mengisi SKP</button></a>
+                            @else
+                                <a href="/admin/skp/belum"><button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info" id="sikpB">Pegawai yang Belum Mengisi SKP</button></a>
+                                <a href="/admin/skp/sudah"><button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info active" id="strB">Pegawai yang Sudah Mengisi SKP</button></a>
+                            @endif
                         </div>
                         <hr />
                         <div class="text-center margintop50">
                             @if(auth()->user()->level == 'ADMIN')
-                                <form action="/it/skp/belum" method="post">
+                                <form action="/it/skp/sudah" method="post">
                             @else
-                                <form action="/admin/skp/belum" method="post">
+                                <form action="/admin/skp/sudah" method="post">
                             @endif
                                 @csrf
                                 <select name="tahun" class="mb-2 mr-2 btn-transition btn btn-outline-dark" >
@@ -117,7 +123,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($tidak_lengkap as $no => $value)
+                                        @foreach ($lengkap as $no => $value)
                                             <tr>
                                                 <th class="text-center">{{$no+1}}</th>
                                                 <td class="text-center">{{$value->nip_baru}}</td>
@@ -175,5 +181,4 @@
             });
         });
     </script>
-    @include('admin.dashboard.index_partial.hide_show')
 @endpush

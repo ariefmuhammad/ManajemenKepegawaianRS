@@ -180,7 +180,12 @@ Route::group(['middleware'=>['auth','checkRole:PEGAWAI']], function () {
 
 Route::group(['prefix' => 'admin', 'middleware'=>['auth','checkRole:TU']], function () {
     Route::resource('/','adminDashboardController');
+    Route::get('/pegawai/{id}/skp','adminPegawaiController@skp');
     Route::resource('/pegawai','adminPegawaiController');
+    Route::get('/skp/sudah','adminSkpController@sudah');
+    Route::post('/skp/sudah','adminSkpController@filter_sudah');
+    Route::get('/skp/belum','adminSkpController@index');
+    Route::post('/skp/belum','adminSkpController@filter_belum');
     Route::resource('/skp','adminSkpController');
     Route::resource('/ruangan','adminRuanganController');
     Route::resource('/setting','adminSettingController');
@@ -191,9 +196,12 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','checkRole:TU']], funct
 
 Route::group(['prefix' => 'it', 'middleware'=>['auth','checkRole:ADMIN']], function () {
     Route::resource('/','adminDashboardController');
+    Route::get('/pegawai/{id}/skp','adminPegawaiController@skp');
     Route::resource('/pegawai','adminPegawaiController');
-    Route::get('/skp/sudah','adminSkpController@index');
-    Route::get('/skp/belum','adminSkpController@belum');
+    Route::get('/skp/sudah','adminSkpController@sudah');
+    Route::post('/skp/sudah','adminSkpController@filter_sudah');
+    Route::get('/skp/belum','adminSkpController@index');
+    Route::post('/skp/belum','adminSkpController@filter_belum');
     Route::resource('/skp','adminSkpController');
     Route::resource('/ruangan','adminRuanganController');
     Route::resource('/periode','periodeController');

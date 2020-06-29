@@ -24,11 +24,13 @@ class CreateTableFormPengukuranSkp extends Migration
             $table->string('target_kuant_output_1')->nullable();
             $table->string('target_kuant_output_2')->nullable();
             $table->string('target_kual_mutu')->nullable();
+            $table->string('target_waktu')->nullable();
             $table->string('target_biaya')->nullable();
             $table->string('ak_realisasi')->nullable();
             $table->string('realisasi_kuant_output_1')->nullable();
             $table->string('realisasi_kuant_output_2')->nullable();
             $table->string('realisasi_kual_mutu')->nullable();
+            $table->string('realisas_waktu')->nullable();
             $table->string('realisasi_biaya')->nullable();
             $table->string('penghitungan')->nullable();
             $table->string('nilai_capaian_skp')->nullable();

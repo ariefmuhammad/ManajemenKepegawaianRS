@@ -1,4 +1,4 @@
-<button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info active" id="dasarB">Dasar</button>
+<button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info" id="dasarB">Dasar</button>
 <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info" id="riwayat_pendidikan_formalB">Riwayat Pendidikan Formal</button>
 <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info" id="riwayat_diklat_fungsionalB">Riwayat Diktal Fungsional</button>
 <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info" id="riwayat_diklat_teknisB">Riwayat Diklat Teknis</button>
@@ -19,7 +19,7 @@
 <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info" id="organisasiB">Keanggotaan Organisasi</button>
 <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info" id="keluargaB">Keluarga</button>
 @if(auth()->user()->level == 'ADMIN')
-    <a href="/it/pegawai/{{$pegawai->id}}/skp"><button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info">SKP</button></a>
+    <a href="/it/pegawai/{{$pegawai->id}}/skp"><button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info active">SKP</button></a>
 @else
-    <a href="/admin/pegawai/{{$pegawai->id}}/skp"><button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info">SKP</button></a>
+    <a href="/admin/pegawai/{{$pegawai->id}}/skp"><button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info active">SKP</button></a>
 @endif

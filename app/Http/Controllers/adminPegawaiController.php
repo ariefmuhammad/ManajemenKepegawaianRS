@@ -22,6 +22,7 @@ use App\Organisasi;
 use App\KeluargaKandung;
 use App\KeluargaIstriSuami;
 use App\Ruangan;
+use App\Periode;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 
@@ -485,5 +486,84 @@ class adminPegawaiController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function skp($id){
+        $data['ruangan'] = Ruangan::where('active','1')->get();
+        $data['pegawai'] = Pegawai::findOrFail($id);
+        $data['periode'] = Periode::orderBy('id','DESC')->first();
+        $data['tahun'] = Periode::pluck('tahun')->unique();
+        $data['noFormSkp'] = 0;
+        $data['noPengukuranSkp'] = 0;
+        $data['skp'] = $data['pegawai']
+                        ->skp
+                        ->where('active','1')
+                        ->where('tahun',$data['periode']->tahun)
+                        ->where('kategori',$data['periode']->periode)
+                        ->first();
+        $data['formSkp'] = $data['pegawai']
+                        ->formSkp
+                        ->where('active','1')
+                        ->where('tahun',$data['periode']->tahun)
+                        ->where('kategori',$data['periode']->periode);
+        $data['pengukuranSkp'] = $data['pegawai']
+                        ->pengukuranSkp
+                        ->where('active','1')
+                        ->where('tahun',$data['periode']->tahun)
+                        ->where('kategori',$data['periode']->periode);
+        $data['pengukuranSkp_kegiatan_tugas_tambahan'] = $data['pegawai']
+                        ->pengukuranSkp
+                        ->where('active','1')
+                        ->where('kategori_pengukuran','Kegiatan Tugas Tambahan')
+                        ->where('tahun',$data['periode']->tahun)
+                        ->where('kategori',$data['periode']->periode);
+        $data['pengukuranSkp_kreativitas'] = $data['pegawai']
+                        ->pengukuranSkp
+                        ->where('active','1')
+                        ->where('kategori_pengukuran','Kreativitas')
+                        ->where('tahun',$data['periode']->tahun)
+                        ->where('kategori',$data['periode']->periode);
+        $data['pengukuranSkp_tugas_tambahan'] = $data['pegawai']
+                        ->pengukuranSkp
+                        ->where('active','1')
+                        ->where('kategori_pengukuran','Tugas Tambahan')
+                        ->where('tahun',$data['periode']->tahun)
+                        ->where('kategori',$data['periode']->periode);
+        $data['penilaianSkp'] = $data['pegawai']
+                        ->penilaianSkp
+                        ->where('active','1')
+                        ->where('tahun',$data['periode']->tahun)
+                        ->where('kategori',$data['periode']->periode);
+        $data['perilakuKerjaSkp'] = $data['pegawai']
+                        ->perilakuKerjaSkp
+                        ->where('active','1')
+                        ->where('tahun',$data['periode']->tahun)
+                        ->where('kategori',$data['periode']->periode);
+        $data['countFormSkp'] = count($data['formSkp']);
+        $data['countPengukuranSkp'] = count($data['pengukuranSkp']);
+        $data['countPengukuranSkp_kegiatan_tugas_tambahannSkp'] = count($data['pengukuranSkp_kegiatan_tugas_tambahan']);
+        $data['countPengukuranSkp_kreativitas'] = count($data['pengukuranSkp_kreativitas']);
+        $data['countPengukuranSkp_tugas_tambahan'] = count($data['pengukuranSkp_tugas_tambahan']);
+        $data['countPenilaianSkp'] = count($data['penilaianSkp']);
+        $data['countPerilakuKerjaSkp'] = count($data['perilakuKerjaSkp']);
+        foreach ($data['pengukuranSkp'] as $key => $value) {
+            $value['penghitungan'] = ;
+            // $value['capaianSkp'] = ;
+            // $data['totalKegiatan'] = ;
+            // $data['totalAkTarget'] = ;
+            // $data['totalKuantTarget1'] = ;
+            // $data['totalKuantTarget2'] = ;
+            // $data['totalKualTarget'] = ;
+            // $data['totalBiayaTarget'] = ;
+            // $data['totalAkRealisasi'] = ;
+            // $data['totalKuantRealisasi1'] = ;
+            // $data['totalKuantRealisasi2'] = ;
+            // $data['totalKualRealisasi'] = ;
+            // $data['totalBiayaRealisasi'] = ;
+            // $data['totalPenghitungan'] = ;
+            // $data['totalSkp'] = ;
+        }
+        // dd($data['formSkp']);
+        return view('admin/pegawai/skp',$data);
     }
 }
