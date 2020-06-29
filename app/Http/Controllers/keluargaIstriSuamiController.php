@@ -16,7 +16,7 @@ class keluargaIstriSuamiController extends Controller
     public function index()
     {
 
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $keluarga_istri_suami = KeluargaIstriSuami::where('active', '1')->get();
        
@@ -41,7 +41,7 @@ class keluargaIstriSuamiController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $keluarga_istri_suami = KeluargaIstriSuami::create([
             'tahun' => $request->input('tahun', 2020),
@@ -91,7 +91,7 @@ class keluargaIstriSuamiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $keluarga_istri_suami = KeluargaIstriSuami::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

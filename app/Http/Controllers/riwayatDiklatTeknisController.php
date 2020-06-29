@@ -15,8 +15,11 @@ class riwayatDiklatTeknisController extends Controller
      */
     public function index()
     {
-        $riwayat_diklat_teknis = DiklatTeknis::where('active', '1')->get(); 
-        return view('riwayat_diklat_teknis', compact('riwayat_diklat_teknis'));
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
+        $riwayat_diklat_teknis = DiklatTeknis::where('active', '1')->get();
+
+        return view('riwayat_diklat_teknis', compact(['riwayat_diklat_teknis', 'pegawai_id']));
     }
 
     /**
@@ -37,7 +40,7 @@ class riwayatDiklatTeknisController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_diklat_teknis = DiklatTeknis::create([
             'tahun' => $request->input('tahun', 2020),
@@ -88,7 +91,7 @@ class riwayatDiklatTeknisController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_diklat_teknis = DiklatTeknis::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

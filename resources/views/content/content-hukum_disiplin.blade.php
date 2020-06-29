@@ -3,7 +3,7 @@
                             <div class="page-title-wrapper">
                                 <div class="page-title-heading">
                                     <div class="page-title-icon">
-                                        <i class="pe-7s-note2 icon-gradient bg-happy-fisher">
+                                        <i class="fa fa-exclamation-triangle icon-gradient bg-happy-fisher">
                                         </i>
                                     </div>
                                     <div>Hukum Disiplin
@@ -43,7 +43,7 @@
                                             <tbody>
                                             @php($no=0)
                                             @foreach($hukum_disiplin as $key => $hukum_disiplins)
-                                            @if(auth()->user()->id == $hukum_disiplins->pegawai_id)
+                                            @if($pegawai_id->id == $hukum_disiplins->pegawai_id)
                                             <tr>
                                                 <th scope="row">{{++$no}}</th>
                                                 <!-- <td>{{$hukum_disiplins->tahun}}</td> -->

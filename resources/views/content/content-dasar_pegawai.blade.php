@@ -3,7 +3,7 @@
                             <div class="page-title-wrapper">
                                 <div class="page-title-heading">
                                     <div class="page-title-icon">
-                                        <i class="pe-7s-note2 icon-gradient bg-happy-fisher">
+                                        <i class="fa fa-id-card icon-gradient bg-happy-fisher">
                                         </i>
                                     </div>
                                     <div>Dasar Pegawai

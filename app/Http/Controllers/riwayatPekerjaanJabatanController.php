@@ -15,8 +15,11 @@ class riwayatPekerjaanJabatanController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $riwayat_pekerjaan_jabatan = PekerjaanJabatan::where('active', '1')->get();
-        return view('riwayat_pekerjaan-jabatan', compact('riwayat_pekerjaan_jabatan'));
+        
+        return view('riwayat_pekerjaan-jabatan', compact(['riwayat_pekerjaan_jabatan', 'pegawai_id']));
     }
 
     /**
@@ -37,7 +40,7 @@ class riwayatPekerjaanJabatanController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_pekerjaan_jabatan = PekerjaanJabatan::create([
             'tahun' => $request->input('tahun', 2020),
@@ -90,7 +93,7 @@ class riwayatPekerjaanJabatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_pekerjaan_jabatan = PekerjaanJabatan::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

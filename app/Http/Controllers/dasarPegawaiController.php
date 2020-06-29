@@ -17,7 +17,8 @@ class dasarPegawaiController extends Controller
     public function index()
     {
 
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $pegawai = Pegawai::where('active', '1')->get();
         
@@ -94,10 +95,10 @@ class dasarPegawaiController extends Controller
             'user_id' => auth()->user()->id,
         ]);
 
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $dasar_pegawai = Dasar::create([
-            'tahun' => $request->input('tahun', 2019),
+            'tahun' => $request->input('tahun', 2020),
             'pegawai_id' => $pegawai_id->id,
             'eselon_1' => $request->eselon_1,
             'eselon_2' => $request->eselon_2,
@@ -225,7 +226,7 @@ class dasarPegawaiController extends Controller
             'user_id' => auth()->user()->id,
         ]);
 
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $data_telepon = Telepon::where('id', $id)->update([
             'pegawai_id' => $pegawai_id->id,

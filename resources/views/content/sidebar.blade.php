@@ -35,13 +35,16 @@
                                 @if(auth()->user()->level == 'PEGAWAI')
                                     <li>
                                         <a href="{{route('dasar_pegawai')}}" class="{{ Request::is('/') ? 'mm-active' : '' }}">
-                                            <i class="metismenu-icon pe-7s-note2"></i>
+                                            <i class="metismenu-icon fa fa-id-card"></i>
                                             Dasar Pegawai
                                         </a>
                                     </li>
+                                    @if(empty($pegawai_id))
+
+                                    @elseif(!empty($pegawai_id))
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-note2"></i>
+                                    <i class="metismenu-icon fa fa-history"></i>
                                         Riwayat
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
@@ -106,20 +109,25 @@
 
                                     <li>
                                         <a href="{{route('istri_suami')}}" class="{{ Request::is('istri_suami') ? 'mm-active' : '' }}">
-                                            <i class="metismenu-icon pe-7s-note2"></i>
-                                            Istri / Suami
+                                            @if($pegawai_id->jenis_kelamin == "P")
+                                            <i class="metismenu-icon fa fa-female"></i>
+                                            Istri
+                                            @elseif($pegawai_id->jenis_kelamin == "W")
+                                            <i class="metismenu-icon fa fa-male"></i>
+                                            Suami
+                                            @endif
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{route('anak')}}" class="{{ Request::is('anak') ? 'mm-active' : '' }}">
-                                            <i class="metismenu-icon pe-7s-note2"></i>
+                                            <i class="metismenu-icon fa fa-child"></i>
                                             Anak
                                         </a>
                                     </li>
 
                                     <li>
                                         <a href="#">
-                                            <i class="metismenu-icon pe-7s-note2"></i>
+                                            <i class="metismenu-icon fa fa-home"></i>
                                             Keluarga
                                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                         </a>
@@ -132,9 +140,14 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('keluarga_istri_suami')}}" class="{{ Request::is('keluarga_istri_suami') ? 'mm-active' : '' }}">
+                                        <a href="{{route('keluarga_istri_suami')}}" class="{{ Request::is('keluarga_istri_suami') ? 'mm-active' : '' }}">     
+                                            @if($pegawai_id->jenis_kelamin == "P")
                                             <i class="metismenu-icon pe-7s-note2"></i>
-                                            Istri / Suami
+                                            Istri
+                                            @elseif($pegawai_id->jenis_kelamin == "W")
+                                            <i class="metismenu-icon pe-7s-note2"></i>
+                                            Suami
+                                            @endif
                                         </a>
                                     </li>
                                 </ul>
@@ -142,7 +155,7 @@
 
                             <li>
                                         <a href="#">
-                                            <i class="metismenu-icon pe-7s-note2"></i>
+                                            <i class="metismenu-icon fa fa-braille"></i>
                                             SKP
                                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                         </a>
@@ -186,28 +199,29 @@
 
                                     <li>
                                         <a href="{{route('seminar_lokakarya_simposium')}}" class="{{ Request::is('seminar_lokakarya_simposium') ? 'mm-active' : '' }}">
-                                            <i class="metismenu-icon pe-7s-note2"></i>
+                                            <i class="metismenu-icon fa fa-desktop"></i>
                                             Seminar / Lokakarya / Simposium
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{route('tanda_jasa_penghargaan')}}" class="{{ Request::is('tanda_jasa_penghargaan') ? 'mm-active' : '' }}">
-                                            <i class="metismenu-icon pe-7s-note2"></i>
+                                            <i class="metismenu-icon fa fa-trophy"></i>
                                             Tanda Jasa / Penghargaan
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{route('hukum_disiplin')}}" class="{{ Request::is('hukum_disiplin') ? 'mm-active' : '' }}">
-                                            <i class="metismenu-icon pe-7s-note2"></i>
+                                            <i class="metismenu-icon fa fa-exclamation-triangle"></i>
                                             Hukum Disiplin
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{route('keanggotaan_organisasi')}}" class="{{ Request::is('keanggotaan_organisasi') ? 'mm-active' : '' }}">
-                                            <i class="metismenu-icon pe-7s-note2"></i>
+                                            <i class="metismenu-icon fa fa-users"></i>
                                             Keanggotaan Organisasi
                                         </a>
-                                    </li>    
+                                    </li>
+                                    @endif    
                                 @endif
                                 @if(auth()->user()->level == 'TU')
                                     <li>

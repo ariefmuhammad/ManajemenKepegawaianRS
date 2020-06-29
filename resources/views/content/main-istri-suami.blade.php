@@ -54,7 +54,7 @@
 
 
 @foreach($istri_suami as $istri_suamis)
-@if($istri_suamis->pegawai->jenis_kelamin == "P")
+@if($pegawai_id->jenis_kelamin == "P")
 <!-- Modal Lihat -->
 <div class="modal fade bd-example-modal-lg" id="exampleModalLargeDetail-{{$istri_suamis->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -136,7 +136,7 @@
     </div>
 </div>
 <!-- Modal Lihat -->
-@elseif($istri_suamis->pegawai->jenis_kelamin == "W")
+@elseif($pegawai_id->jenis_kelamin == "W")
 <!-- Modal Lihat -->
 <div class="modal fade bd-example-modal-lg" id="exampleModalLargeDetail-{{$istri_suamis->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -355,7 +355,7 @@
 
 
 @foreach($istri_suami as $istri_suamis)
-@if($istri_suamis->pegawai->jenis_kelamin == "P")
+@if($pegawai_id->jenis_kelamin == "P")
 <!-- Modal Ubah -->
 <div class="modal fade bd-example-modal-lg" id="exampleModalLargeUbah-{{$istri_suamis->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -552,7 +552,7 @@
     </div>
 </div>
 <!-- Modal Ubah -->
-@elseif($istri_suamis->pegawai->jenis_kelamin == "W")
+@elseif($pegawai_id->jenis_kelamin == "W")
 <!-- Modal Ubah -->
 <div class="modal fade bd-example-modal-lg" id="exampleModalLargeUbah-{{$istri_suamis->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -754,7 +754,7 @@
 
 
 @foreach($istri_suami as $istri_suamis)
-@if($istri_suamis->pegawai->jenis_kelamin == "P")
+@if($pegawai_id->jenis_kelamin == "P")
 <!-- Small modal Hapus -->
 <div class="modal fade bd-example-modal-sm-delete-{{$istri_suamis->id}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
@@ -780,7 +780,7 @@
     </div>
 </div>
 <!-- Small modal Delete -->
-@elseif($istri_suamis->pegawai->jenis_kelamin == "W")
+@elseif($pegawai_id->jenis_kelamin == "W")
 <!-- Small modal Hapus -->
 <div class="modal fade bd-example-modal-sm-delete-{{$istri_suamis->id}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">

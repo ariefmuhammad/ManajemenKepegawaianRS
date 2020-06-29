@@ -1,15 +1,26 @@
 <div class="app-main__inner">
                         <div class="app-page-title">
                             <div class="page-title-wrapper">
-                                <div class="page-title-heading">
+                                <div class="page-title-heading">      
+                                    @if($pegawai_id->jenis_kelamin == "P")
                                     <div class="page-title-icon">
-                                        <i class="pe-7s-note2 icon-gradient bg-happy-fisher">
+                                        <i class="fa fa-female icon-gradient bg-happy-fisher">
                                         </i>
                                     </div>
-                                    <div>Istri / Suami
-                                        <div class="page-title-subheading">Isi data istri / suami anda disini.
+                                    <div>Istri
+                                        <div class="page-title-subheading">Isi data istri anda disini.
                                         </div>
                                     </div>
+                                    @elseif($pegawai_id->jenis_kelamin == "W")
+                                    <div class="page-title-icon">
+                                        <i class="fa fa-male icon-gradient bg-happy-fisher">
+                                        </i>
+                                    </div>
+                                    <div>Suami
+                                        <div class="page-title-subheading">Isi data suami anda disini.
+                                        </div>
+                                    </div>
+                                    @endif
                                 </div>               
                                 <div class="page-title-actions">
                                     
@@ -24,7 +35,11 @@
                             </div>
                             <div class="tab-pane tabs-animation fade show active" id="tab-content-1" role="tabpanel">
                                 <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Masukan Data Istri / Suami</h5>
+                                    @if($pegawai_id->jenis_kelamin == "P")
+                                    <div class="card-body"><h5 class="card-title">Masukan Data Istri</h5>
+                                    @elseif($pegawai_id->jenis_kelamin == "W")
+                                    <div class="card-body"><h5 class="card-title">Masukan Data Suami</h5>
+                                    @endif
                                     <button class="mb-2 mr-2 btn-transition btn btn-outline-dark btn-lg btn-block" data-toggle="modal" data-target="#exampleModalLargeTambah"><i class="fa fa-fw" aria-hidden="true" title="Copy to use plus-square"></i> Tambah Data
                                     </button>
                                         <table class="mb-0 table" id="table">
@@ -38,14 +53,18 @@
                                                 <!-- <th>Tanggal Nikah</th> -->
                                                 <!-- <th>Tingkat Pendidikan</th> -->
                                                 <!-- <th>Pekerjaan</th> -->
-                                                <th>Status Suami Istri</th>
+                                                @if($pegawai_id->jenis_kelamin == "P")
+                                                <th>Status Istri</th>
+                                                @elseif($pegawai_id->jenis_kelamin == "W")
+                                                <th>Status Suami</th>
+                                                @endif
                                                 <th>Aksi</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             @php($no=0)
                                             @foreach($istri_suami as $key => $istri_suamis)
-                                            @if(auth()->user()->id == $istri_suamis->pegawai_id)
+                                            @if($pegawai_id->id == $istri_suamis->pegawai_id)
                                             <tr>
                                                 <th scope="row">{{++$no}}</th>
                                                 <!-- <td>{{$istri_suamis->tahun}}</td> -->
@@ -81,7 +100,11 @@
                                                 <!-- <td>{{$istri_suamis->pekerjaan}}</td> -->
                                                 <td>
                                                 @if($istri_suamis->status_suami_istri == "1")
-                                                Istri / Suami Saat Ini                                          
+                                                @if($pegawai_id->jenis_kelamin == "P")
+                                                Istri Saat Ini
+                                                @elseif($pegawai_id->jenis_kelamin == "W")
+                                                Suami Saat Ini
+                                                @endif                                          
                                                 @elseif($istri_suamis->status_suami_istri == "2")                                              
                                                 Telah Meninggal Dunia                                              
                                                 @elseif($istri_suamis->status_suami_istri == "3")                                 

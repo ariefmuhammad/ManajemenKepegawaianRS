@@ -15,9 +15,11 @@ class hukumanController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $hukum_disiplin = Hukuman::where('active', '1')->get();
 
-        return view('hukum_disiplin', compact('hukum_disiplin'));
+        return view('hukum_disiplin', compact(['hukum_disiplin', 'pegawai_id']));
     }
 
     /**
@@ -38,7 +40,7 @@ class hukumanController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $hukum_disiplin = Hukuman::create([
             'tahun' => $request->input('tahun', 2020),
@@ -87,7 +89,7 @@ class hukumanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $hukum_disiplin = Hukuman::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

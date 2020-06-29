@@ -3,13 +3,20 @@
                             <div class="page-title-wrapper">
                                 <div class="page-title-heading">
                                     <div class="page-title-icon">
-                                        <i class="pe-7s-note2 icon-gradient bg-happy-fisher">
+                                        <i class="fa fa-home icon-gradient bg-happy-fisher">
                                         </i>
                                     </div>
-                                    <div>Keluarga Istri / Suami
-                                        <div class="page-title-subheading">Isi data keluarga istri / suami anda disini.
+                                    @if($pegawai_id->jenis_kelamin == "P")
+                                    <div>Keluarga Istri
+                                        <div class="page-title-subheading">Isi data keluarga istri anda disini.
                                         </div>
                                     </div>
+                                    @elseif($pegawai_id->jenis_kelamin == "W")
+                                    <div>Keluarga Suami
+                                        <div class="page-title-subheading">Isi data keluarga suami anda disini.
+                                        </div>
+                                    </div>
+                                    @endif
                                 </div>               
                                 <div class="page-title-actions">
                                     
@@ -24,8 +31,11 @@
                             </div>
                             <div class="tab-pane tabs-animation fade show active" id="tab-content-1" role="tabpanel">
                                 <div class="main-card mb-3 card">
-                                    <div class="card-body"><h5 class="card-title">Masukan Data Keluarga Istri / Suami</h5>
-                                
+                                @if($pegawai_id->jenis_kelamin == "P")
+                                    <div class="card-body"><h5 class="card-title">Masukan Data Keluarga Istri</h5>
+                                @elseif($pegawai_id->jenis_kelamin == "W")
+                                    <div class="card-body"><h5 class="card-title">Masukan Data Keluarga Suami</h5>
+                                @endif
                                     <button class="mb-2 mr-2 btn-transition btn btn-outline-dark btn-lg btn-block" data-toggle="modal" data-target="#exampleModalLargeTambah"><i class="fa fa-fw" aria-hidden="true" title="Copy to use plus-square"></i> Tambah Data
                                     </button>
                                         <table class="mb-0 table" id="table">

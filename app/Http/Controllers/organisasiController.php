@@ -15,9 +15,11 @@ class organisasiController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $keanggotaan_organisasi = Organisasi::where('active', '1')->get();
 
-        return view('keanggotaan_organisasi', compact('keanggotaan_organisasi'));
+        return view('keanggotaan_organisasi', compact(['keanggotaan_organisasi', 'pegawai_id']));
     }
 
     /**
@@ -38,7 +40,7 @@ class organisasiController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $keanggotaan_organisasi = Organisasi::create([
             'tahun' => $request->input('tahun', 2020),
@@ -89,7 +91,7 @@ class organisasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $keanggotaan_organisasi = Organisasi::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

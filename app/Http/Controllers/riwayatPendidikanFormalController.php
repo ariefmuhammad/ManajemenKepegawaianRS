@@ -15,11 +15,11 @@ class riwayatPendidikanFormalController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $riwayat_pendidikan_formal = PendidikanFormal::where('active', '1')->get();
 
-        // return $pendidikan_formal;
-
-        return view('riwayat_pendidikan_formal', compact('riwayat_pendidikan_formal'));
+        return view('riwayat_pendidikan_formal', compact(['riwayat_pendidikan_formal', 'pegawai_id']));
     }
 
     /**
@@ -41,7 +41,7 @@ class riwayatPendidikanFormalController extends Controller
     public function store(Request $request)
     {
 
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_pendidikan_formal = PendidikanFormal::create([
             'tahun' => $request->input('tahun', 2020),
@@ -96,7 +96,7 @@ class riwayatPendidikanFormalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_pendidikan_formal = PendidikanFormal::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

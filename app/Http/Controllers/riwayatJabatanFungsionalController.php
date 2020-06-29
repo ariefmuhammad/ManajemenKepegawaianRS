@@ -15,9 +15,11 @@ class riwayatJabatanFungsionalController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $riwayat_jabatan_fungsional = JabatanFungsional::where('active', '1')->get();
 
-        return view('riwayat_jabatan_fungsional', compact('riwayat_jabatan_fungsional'));
+        return view('riwayat_jabatan_fungsional', compact('riwayat_jabatan_fungsional', 'pegawai_id'));
     }
 
     /**
@@ -38,7 +40,7 @@ class riwayatJabatanFungsionalController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_jabatan_fungsional = JabatanFungsional::create([
             'tahun' => $request->input('tahun', 2020),
@@ -88,7 +90,7 @@ class riwayatJabatanFungsionalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_jabatan_fungsional = JabatanFungsional::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

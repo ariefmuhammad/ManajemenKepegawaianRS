@@ -19,41 +19,50 @@ class skpController extends Controller
      */
     public function indexSkp()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $skp = Skp::where('active', '1')->get();
 
-        return view('skp', compact('skp'));
+        return view('skp', compact(['skp', 'pegawai_id']));
     }
 
     public function indexFormSkp()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $form_skp = FormSkp::where('active', '1')->get();
 
-        return view('form_skp', compact('form_skp'));
+        return view('form_skp', compact(['form_skp', 'pegawai_id']));
     }
 
 
     public function indexPengukuranSkp()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $pengukuran_skp = PengukuranSkp::where('active', '1')->get();
 
-        return view('pengukuran_skp', compact('pengukuran_skp'));
+        return view('pengukuran_skp', compact(['pengukuran_skp', 'pegawai_id']));
     }
 
 
     public function indexPerilakuKerjaSkp()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $perilaku_kerja_skp = PerilakuKerjaSkp::where('active', '1')->get();
 
-        return view('perilaku_kerja_skp', compact('perilaku_kerja_skp'));
+        return view('perilaku_kerja_skp', compact(['perilaku_kerja_skp', 'pegawai_id']));
     }
 
 
     public function indexPenilaianSkp()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $penilaian_skp = PenilaianSkp::where('active', '1')->get();
 
-        return view('penilaian_skp', compact('penilaian_skp'));
+        return view('penilaian_skp', compact(['penilaian_skp', 'pegawai_id']));
     }
 
     /**
@@ -74,7 +83,7 @@ class skpController extends Controller
      */
     public function storeSkp(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $skp = Skp::create([
             'tahun' => $request->input('tahun', 2020),
@@ -100,7 +109,7 @@ class skpController extends Controller
 
     public function storeFormSkp(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $form_skp = FormSkp::create([
             'tahun' => $request->input('tahun', 2020),
@@ -123,7 +132,7 @@ class skpController extends Controller
 
     public function storePengukuranSkp(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
         
         $pengukuran_skp = PengukuranSkp::create([
             'tahun' => $request->input('tahun', 2020),
@@ -167,7 +176,7 @@ class skpController extends Controller
 
     public function storePerilakuKerjaSkp(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $perilaku_kerja_skp = PerilakuKerjaSkp::create([
             'tahun' => $request->input('tahun', 2020),
@@ -191,7 +200,7 @@ class skpController extends Controller
 
     public function storePenilaianSkp(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $penilaian_skp = PenilaianSkp::create([
             'tahun' => $request->input('tahun', 2020),
@@ -268,7 +277,7 @@ class skpController extends Controller
      */
     public function updateSkp(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $skp = Skp::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),
@@ -295,7 +304,7 @@ class skpController extends Controller
 
     public function updateFormSkp(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $form_skp = FormSkp::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),
@@ -319,7 +328,7 @@ class skpController extends Controller
 
     public function updatePengukuranSkp(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $pengukuran_skp = PengukuranSkp::where('id', $id)->update([
             'pegawai_id' => $pegawai_id->id,
@@ -362,7 +371,7 @@ class skpController extends Controller
 
     public function updatePerilakuKerjaSkp(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $perilaku_kerja_skp = PerilakuKerjaSkp::where('id', $id)->update([
             'pegawai_id' => $pegawai_id->id,
@@ -385,7 +394,7 @@ class skpController extends Controller
 
     public function updatePenilaianSkp(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $penilaian_skp = PenilaianSkp::where('id', $id)->update([
             'pegawai_id' => $pegawai_id->id,

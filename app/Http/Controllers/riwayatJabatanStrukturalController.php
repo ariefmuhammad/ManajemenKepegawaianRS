@@ -15,8 +15,11 @@ class riwayatJabatanStrukturalController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $riwayat_jabatan_struktural = JabatanStruktural::where('active', '1')->get();
-        return view('riwayat_jabatan_struktural', compact('riwayat_jabatan_struktural'));
+
+        return view('riwayat_jabatan_struktural', compact(['riwayat_jabatan_struktural', 'pegawai_id']));
     }
 
     /**
@@ -37,7 +40,7 @@ class riwayatJabatanStrukturalController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_jabatan_struktural = JabatanStruktural::create([
             'tahun' => $request->input('tahun', 2020),
@@ -88,7 +91,7 @@ class riwayatJabatanStrukturalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_jabatan_struktural = JabatanStruktural::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

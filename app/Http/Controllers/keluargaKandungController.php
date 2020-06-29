@@ -15,9 +15,11 @@ class keluargaKandungController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $keluarga_kandung = KeluargaKandung::where('active', '1')->get();
 
-        return view('keluarga_kandung', compact('keluarga_kandung'));
+        return view('keluarga_kandung', compact('keluarga_kandung', 'pegawai_id'));
     }
 
     /**
@@ -38,7 +40,7 @@ class keluargaKandungController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $keluarga_kandung = KeluargaKandung::create([
             'tahun' => $request->input('tahun', 2020),
@@ -88,7 +90,7 @@ class keluargaKandungController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $keluarga_kandung = KeluargaKandung::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

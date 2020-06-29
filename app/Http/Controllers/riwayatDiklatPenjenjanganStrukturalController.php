@@ -15,9 +15,11 @@ class riwayatDiklatPenjenjanganStrukturalController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $riwayat_diklat_penjenjangan_struktural = DiklatPenjenjangan::where('active', '1')->get();
         
-        return view('riwayat_diklat_penjenjangan-struktural', compact('riwayat_diklat_penjenjangan_struktural'));
+        return view('riwayat_diklat_penjenjangan-struktural', compact(['riwayat_diklat_penjenjangan_struktural', 'pegawai_id']));
     }
 
     /**
@@ -38,7 +40,7 @@ class riwayatDiklatPenjenjanganStrukturalController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_diklat_penjenjangan_struktural = DiklatPenjenjangan::create([
             'tahun' => $request->input('tahun', 2020),
@@ -90,7 +92,7 @@ class riwayatDiklatPenjenjanganStrukturalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_diklat_penjenjangan_struktural = DiklatPenjenjangan::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

@@ -15,9 +15,11 @@ class riwayatDiklatFungsionalController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $riwayat_diklat_fungsional = DiklatFungsional::where('active', '1')->get();
     
-        return view('riwayat_diklat_fungsional', compact('riwayat_diklat_fungsional'));
+        return view('riwayat_diklat_fungsional', compact(['riwayat_diklat_fungsional', 'pegawai_id']));
     }
 
     /**
@@ -39,10 +41,10 @@ class riwayatDiklatFungsionalController extends Controller
     public function store(Request $request)
     {
 
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_diklat_fungsional = DiklatFungsional::create([
-            'tahun' => $request->input('tahun', 2019),
+            'tahun' => $request->input('tahun', 2020),
             'pegawai_id' => $pegawai_id->id,
             'nama_diklat' => $request->nama_diklat,
             'tempat_belajar' => $request->tempat_belajar,
@@ -90,7 +92,7 @@ class riwayatDiklatFungsionalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_diklat_fungsional = DiklatFungsional::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

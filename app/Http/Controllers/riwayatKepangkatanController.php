@@ -15,9 +15,11 @@ class riwayatKepangkatanController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+        
         $riwayat_kepangkatan = Kepangkatan::where('active', '1')->get();
 
-        return view('riwayat_kepangkatan', compact('riwayat_kepangkatan'));
+        return view('riwayat_kepangkatan', compact(['riwayat_kepangkatan', 'pegawai_id']));
     }
 
     /**
@@ -38,7 +40,7 @@ class riwayatKepangkatanController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_kepangkatan = Kepangkatan::create([
             'tahun' => $request->input('tahun', 2020),
@@ -87,7 +89,7 @@ class riwayatKepangkatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $riwayat_kepangkatan = Kepangkatan::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

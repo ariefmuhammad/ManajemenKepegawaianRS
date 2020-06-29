@@ -16,9 +16,11 @@ class seminarController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $seminar_lokakarya_simposium = Seminar::where('active', '1')->get();
 
-        return view('seminar-lokakarya-simposium', compact('seminar_lokakarya_simposium'));
+        return view('seminar-lokakarya-simposium', compact(['seminar_lokakarya_simposium', 'pegawai_id']));
     }
 
     /**
@@ -39,7 +41,7 @@ class seminarController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $seminar_lokakarya_simposium = Seminar::insert([
             'tahun' => $request->input('tahun', 2020),
@@ -91,7 +93,7 @@ class seminarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $seminar_lokakarya_simposium = Seminar::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),

@@ -15,9 +15,11 @@ class penghargaanController extends Controller
      */
     public function index()
     {
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
+
         $tanda_jasa_penghargaan = Penghargaan::where('active', '1')->get();
 
-        return view('tanda_jasa-penghargaan', compact('tanda_jasa_penghargaan'));
+        return view('tanda_jasa-penghargaan', compact(['tanda_jasa_penghargaan', 'pegawai_id']));
     }
 
     /**
@@ -38,7 +40,7 @@ class penghargaanController extends Controller
      */
     public function store(Request $request)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $tanda_jasa_penghargaan = Penghargaan::create([
             'tahun' => $request->input('tahun', 2020),
@@ -87,7 +89,7 @@ class penghargaanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pegawai_id = Pegawai::where('id', Auth()->user()->id)->first();
+        $pegawai_id = Pegawai::where('user_id', Auth()->user()->id)->first();
 
         $tanda_jasa_penghargaan = Penghargaan::where('id', $id)->update([
             'tahun' => $request->input('tahun', 2020),
