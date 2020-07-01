@@ -33,9 +33,8 @@
                                                 <th>No</th>
                                                 <!-- <th>Tahun</th> -->
                                                 <th>Kategori</th>
-                                                <th>Sarana Kerja Pegawai</th>
-                                                <th>Orientasi Pelayanan</th>
-                                                <th>Aksi</th>
+                                                <!-- <th>Sarana Kerja Pegawai</th> -->
+                                                <!-- <th>Orientasi Pelayanan</th> -->
                                                 <!-- <th>Integritas</th> -->
                                                 <!-- <th>Komitmen</th> -->
                                                 <!-- <th>Disiplin</th> -->
@@ -57,7 +56,7 @@
                                                 <!-- <th>Jumlah Prestasi Kerja 2</th> -->
                                                 <!-- <th>Keberatan Pegawai</th> -->
                                                 <!-- <th>Tanggal Keberatan Pegawai</th> -->
-                                                <!-- <th>Tanggapan Pejabat</th> -->
+                                                <th>Tanggapan Pejabat</th>
                                                 <!-- <th>Tanggal Tanggapan Pejabat</th> -->
                                                 <!-- <th>Keputusan Atasan Pejabat</th> -->
                                                 <!-- <th>Tanggal Keputusan Atasan Pejabat</th> -->
@@ -65,18 +64,19 @@
                                                 <!-- <th>Dibuat Tanggal Pejabat Penilai</th> -->
                                                 <!-- <th>Diterima Tanggal Pegawai</th> -->
                                                 <!-- <th>Diterima Tanggal Atasan Pejabat Penilai</th> -->
+                                                <th>Aksi</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             @php($no=0)
                                             @foreach($penilaian_skp as $key => $penilaian_skps)
-                                            @if(auth()->user()->id == $penilaian_skps->pegawai_id)                                           
+                                            @if($pegawai_id->id == $penilaian_skps->pegawai_id)                                           
                                             <tr>
                                                 <th scope="row">{{++$no}}</th>
                                                 <!-- <td>{{$penilaian_skps->tahun}}</td> -->
                                                 <td>{{$penilaian_skps->kategori}}</td>
-                                                <td>{{$penilaian_skps->sasaran_kerja_pegawai}}</td>
-                                                <td>{{$penilaian_skps->orientasi_pelayanan}}</td>
+                                                <!-- <td>{{$penilaian_skps->sasaran_kerja_pegawai}}</td>
+                                                <td>{{$penilaian_skps->orientasi_pelayanan}}</td> -->
                                                 <!-- <td>{{$penilaian_skps->integritas}}</td> -->
                                                 <!-- <td>{{$penilaian_skps->komitmen}}</td> -->
                                                 <!-- <td>{{$penilaian_skps->disiplin}}</td> -->
@@ -99,7 +99,7 @@
                                                 <!-- <td>{{$penilaian_skps->nilai_prestasi_kerja_2}}</td> -->
                                                 <!-- <td>{{$penilaian_skps->keberatan_pegawai}}</td> -->
                                                 <!-- <td>{{ date('d/m/Y',strtotime($penilaian_skps->tanggal_keberatan_pegawai)) }}</td> -->
-                                                <!-- <td>{{$penilaian_skps->tanggapan_pejabat}}</td> -->
+                                                <td>{{$penilaian_skps->tanggapan_pejabat}}</td>
                                                 <!-- <td>{{ date('d/m/Y',strtotime($penilaian_skps->tanggal_tanggapan_pejabat)) }}</td> -->
                                                 <!-- <td>{{$penilaian_skps->keputusan_atasan_pejabat}}</td> -->
                                                 <!-- <td>{{ date('d/m/Y',strtotime($penilaian_skps->tanggal_keputusan_atasan_pejabat)) }}</td> -->

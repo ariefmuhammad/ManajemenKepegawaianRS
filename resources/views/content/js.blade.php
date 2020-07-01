@@ -24,3 +24,47 @@
             });
         } );
     </script>
+
+<script>
+        $(document).ready(function() {
+            $('#table2').DataTable({
+                "language": {
+                    "search" : "Cari Data: ",
+                    "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                    "emptyTable": "Data Tidak Ada",
+                    "infoEmpty": "Menampilkan 0 sampai 0 dari 0 data",
+                    "infoFiltered": "(Dicari dari _MAX_ total data)",
+                    "lengthMenu": "Menampilkan _MENU_ Data",
+                    "zeroRecords": "Data yang dicari tidak ada",
+                    "paginate": {
+                        "first":      "Pertama",
+                        "last":       "Terakhir",
+                        "next":       "Berikutnya",
+                        "previous":   "Sebelumnya"
+                    }
+                }
+            });
+        } );
+    </script>
+
+<script>
+        $(document).ready(function() {
+            $('#table3').DataTable({
+                "language": {
+                    "search" : "Cari Data: ",
+                    "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                    "emptyTable": "Data Tidak Ada",
+                    "infoEmpty": "Menampilkan 0 sampai 0 dari 0 data",
+                    "infoFiltered": "(Dicari dari _MAX_ total data)",
+                    "lengthMenu": "Menampilkan _MENU_ Data",
+                    "zeroRecords": "Data yang dicari tidak ada",
+                    "paginate": {
+                        "first":      "Pertama",
+                        "last":       "Terakhir",
+                        "next":       "Berikutnya",
+                        "previous":   "Sebelumnya"
+                    }
+                }
+            });
+        } );
+    </script>

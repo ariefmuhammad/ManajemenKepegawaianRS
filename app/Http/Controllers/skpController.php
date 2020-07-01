@@ -121,11 +121,27 @@ class skpController extends Controller
             'kuant_output_1' => $request->kuant_output_1,
             'kuant_output_2' => $request->kuant_output_2,
             'kual_mutu' => $request->kual_mutu,
+            'waktu' => $request->waktu,
             'biaya' => $request->biaya,
             'active' => $request->input('active', 1),
         ]);
 
-        \Session::flash('Berhasil', 'Data Form SKP berhasil ditambahkan');
+
+        $pengukuran_skp = PengukuranSkp::create([
+            'tahun' => $request->input('tahun', 2020),
+            'pegawai_id' => $pegawai_id->id,
+            'kegiatan_tugas_tambahan' => $request->kegiatan_tugas_jabatan_1,
+            'kategori' => $request->kategori,
+            'ak_target' => $request->ak,
+            'target_kuant_output_1' => $request->kuant_output_1,
+            'target_kuant_output_2' => $request->kuant_output_2,
+            'target_kual_mutu' => $request->kual_mutu,
+            'target_waktu' => $request->waktu,
+            'target_biaya' => $request->biaya,
+            'active' => $request->input('active', 1),
+        ]);
+
+        \Session::flash('Berhasil', 'Data Form SKP & Pengukuran SKP (Kegiatan Tugas Tambahan) berhasil ditambahkan');
 
         return back();
     }
@@ -136,18 +152,21 @@ class skpController extends Controller
         
         $pengukuran_skp = PengukuranSkp::create([
             'tahun' => $request->input('tahun', 2020),
+            'kategori' => $request->kategori,
             'pegawai_id' => $pegawai_id->id,
             'kegiatan_tugas_tambahan' => $request->kegiatan_tugas_tambahan,
-            'kategori' => $request->kategori,
+            'kategori_pengukuran' => $request->kategori_pengukuran,
             'ak_target' => $request->ak_target,
             'target_kuant_output_1' => $request->target_kuant_output_1,
             'target_kuant_output_2' => $request->target_kuant_output_2,
             'target_kual_mutu' => $request->target_kual_mutu,
+            'target_waktu' => $request->target_waktu,
             'target_biaya' => $request->target_biaya,
             'ak_realisasi' => $request->ak_realisasi,
             'realisasi_kuant_output_1' => $request->realisasi_kuant_output_1,
             'realisasi_kuant_output_2' => $request->realisasi_kuant_output_2,
             'realisasi_kual_mutu' => $request->realisasi_kual_mutu,
+            'realisasi_waktu' => $request->realisasi_waktu,
             'realisasi_biaya' => $request->realisasi_biaya,
             'penghitungan' => $request->penghitungan,
             'nilai_capaian_skp' => $request->nilai_capaian_skp,
@@ -316,6 +335,7 @@ class skpController extends Controller
             'kuant_output_1' => $request->kuant_output_1,
             'kuant_output_2' => $request->kuant_output_2,
             'kual_mutu' => $request->kual_mutu,
+            'waktu' => $request->waktu,
             'biaya' => $request->biaya,
             'active' => $request->input('active', 1),
         ]);
@@ -332,17 +352,20 @@ class skpController extends Controller
 
         $pengukuran_skp = PengukuranSkp::where('id', $id)->update([
             'pegawai_id' => $pegawai_id->id,
-            'kegiatan_tugas_tambahan' => $request->kegiatan_tugas_tambahan,
             'kategori' => $request->kategori,
+            'kegiatan_tugas_tambahan' => $request->kegiatan_tugas_tambahan,
+            'kategori_pengukuran' => $request->kategori_pengukuran,
             'ak_target' => $request->ak_target,
             'target_kuant_output_1' => $request->target_kuant_output_1,
             'target_kuant_output_2' => $request->target_kuant_output_2,
             'target_kual_mutu' => $request->target_kual_mutu,
+            'target_waktu' => $request->target_waktu,
             'target_biaya' => $request->target_biaya,
             'ak_realisasi' => $request->ak_realisasi,
             'realisasi_kuant_output_1' => $request->realisasi_kuant_output_1,
             'realisasi_kuant_output_2' => $request->realisasi_kuant_output_2,
             'realisasi_kual_mutu' => $request->realisasi_kual_mutu,
+            'realisasi_waktu' => $request->realisasi_waktu,
             'realisasi_biaya' => $request->realisasi_biaya,
             'penghitungan' => $request->penghitungan,
             'nilai_capaian_skp' => $request->nilai_capaian_skp,

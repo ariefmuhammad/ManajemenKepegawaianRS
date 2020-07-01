@@ -45,7 +45,7 @@
                                             <tbody>
                                             @php($no=0)
                                             @foreach($keanggotaan_organisasi as $key => $keanggotaan_organisasis)
-                                            @if(auth()->user()->id == $keanggotaan_organisasis->pegawai_id)
+                                            @if($pegawai_id->id == $keanggotaan_organisasis->pegawai_id)
                                             <tr>
                                                 <th scope="row">{{++$no}}</th>
                                                 <!-- <td>{{$keanggotaan_organisasis->tahun_organisasi}}</td> -->

@@ -39,6 +39,7 @@
                                                 <!-- <th>Kuant Output 1</th> -->
                                                 <!-- <th>Kuant Output 2</th> -->
                                                 <!-- <th>Kual Mutu</th> -->
+                                                <!-- <th>Waktu</th> -->
                                                 <!-- <th>Biaya</th> -->
                                                 <th>Aksi</th>
                                             </tr>
@@ -46,7 +47,7 @@
                                             <tbody>
                                             @php($no=0)
                                             @foreach($form_skp as $key => $form_skps)
-                                            @if(auth()->user()->id == $form_skps->pegawai_id)
+                                            @if($pegawai_id->id == $form_skps->pegawai_id)
                                             <tr>
                                                 <th scope="row">{{++$no}}</th>
                                                 <!-- <td>{{$form_skps->tahun}}</td> -->
@@ -57,6 +58,7 @@
                                                 <!-- <td>{{$form_skps->kuant_output_1}}</td> -->
                                                 <!-- <td>{{$form_skps->kuant_output_2}}</td> -->
                                                 <!-- <td>{{$form_skps->kual_mutu}}</td> -->
+                                                <!-- <td>{{$form_skps->waktu}}</td> -->
                                                 <!-- <td>{{$form_skps->biaya}}</td> -->
                                                 <td>
                                                     <span data-toggle="tooltip" data-placement="top" title="Lebih Lengkap Data"><button class="mb-2 mr-2 btn-transition btn btn-outline-alternate" data-toggle="modal" data-target="#exampleModalLargeDetail-{{$form_skps->id}}"> <i class="fa fa-fw" aria-hidden="true"></i>  

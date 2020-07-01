@@ -18,6 +18,7 @@ class FormSkp extends Model
         'kuant_output_1',
         'kuant_output_2',
         'kual_mutu',
+        'waktu',
         'biaya',
         'active',
         'created_at',

@@ -191,7 +191,7 @@
                                             <li>
                                                 <a href="{{route('penilaian_skp')}}" class="{{ Request::is('penilaian_skp') ? 'mm-active' : '' }}">
                                                     <i class="metismenu-icon">
-                                                    </i>PENIILAIAN
+                                                    </i>PENILAIAN
                                                 </a>
                                             </li>
                                         </ul>

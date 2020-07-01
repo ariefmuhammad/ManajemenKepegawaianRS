@@ -2,50 +2,7 @@
     @include('content.sidebar')
     <div class="app-main__outer">
     @include('content.content-penilaian_skp')
-    @push('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.21/af-2.3.5/fh-3.1.7/r-2.2.5/sp-1.1.1/sl-1.3.1/datatables.min.css"/>
-    <style>
-        .width100{
-            width: 100%;
-        }
-        .width100px{
-            width: 100px;
-        }
-        .width40{
-            width: 40px;
-        }
-        .width200{
-            width: 200px;
-        }
-        .margintop20 {
-            margin-top: 20px;
-        }
-        .margintop50 {
-            margin-top: 50px;
-        }
-        .sidetable{
-            background-image: url(/lojin/sidebarx.png);
-            background-repeat: no-repeat;
-            width: 500px;
-            height: 41px;
-            color: #ffffff;
-        }
-        .titlepertab {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-            font-size: 40px;
-            letter-spacing: 0px;
-            word-spacing: 0px;
-            color: #000000;
-            font-weight: 700;
-            text-decoration: none solid rgb(68, 68, 68);
-            font-style: normal;
-            font-variant: small-caps;
-            text-transform: capitalize;
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
-    </style>
-@endpush
+
     @include('content.footer')
     </div>
     <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
@@ -235,92 +192,92 @@
                                                                             <option value="Setahun">Setahun</option>
                                                                         </select></div>          
                                             </div> 
-                                            <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Sarana Kerja Pegawai</b></label>
-                                                <div class="col-sm-10"><input name="sasaran_kerja_pegawai" id="exampleEmail" placeholder="Sarana Kerja Pegawai" type="number" class="form-control" value="" required></div>          
+                                            <!-- <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Sarana Kerja Pegawai</b></label>
+                                                <div class="col-sm-10"><input name="sasaran_kerja_pegawai" id="exampleEmail" placeholder="Sarana Kerja Pegawai" type="text" class="form-control" value="" required></div>          
                                             </div> 
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Orientasi Pelayanan</b></label>
-                                                <div class="col-sm-10"><input name="orientasi_pelayanan" id="exampleEmail" placeholder="Orientasi Pelayanan" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="orientasi_pelayanan" id="exampleEmail" placeholder="Orientasi Pelayanan" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Integritas</b></label>
-                                                <div class="col-sm-10"><input name="integritas" id="exampleEmail" placeholder="Integritas" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="integritas" id="exampleEmail" placeholder="Integritas" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Komitmen</b></label>
-                                                <div class="col-sm-10"><input name="komitmen" id="exampleEmail" placeholder="Komitmen" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="komitmen" id="exampleEmail" placeholder="Komitmen" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Disiplin</b></label>
-                                                <div class="col-sm-10"><input name="disiplin" id="exampleEmail" placeholder="Disiplin" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="disiplin" id="exampleEmail" placeholder="Disiplin" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Kerjasama</b></label>
-                                                <div class="col-sm-10"><input name="kerjasama" id="exampleEmail" placeholder="Kerjasama" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="kerjasama" id="exampleEmail" placeholder="Kerjasama" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Kepemimpinan</b></label>
-                                                <div class="col-sm-10"><input name="kepemimpinan" id="exampleEmail" placeholder="Kepemimpinan" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="kepemimpinan" id="exampleEmail" placeholder="Kepemimpinan" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah</b></label>
-                                                <div class="col-sm-10"><input name="jumlah" id="exampleEmail" placeholder="Jumlah" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah" id="exampleEmail" placeholder="Jumlah" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Rata - Rata</b></label>
-                                                <div class="col-sm-10"><input name="rata_rata" id="exampleEmail" placeholder="Rata - Rata" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="rata_rata" id="exampleEmail" placeholder="Rata - Rata" type="text" class="form-control" value="" required></div>          
                                             </div>  
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Nilai Perilaku Kerja</b></label>
-                                                <div class="col-sm-10"><input name="nilai_perilaku_kerja" id="exampleEmail" placeholder="Nilai Perilaku Kerja" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="nilai_perilaku_kerja" id="exampleEmail" placeholder="Nilai Perilaku Kerja" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Sasaran Kerja Pegawai</b></label>
-                                                <div class="col-sm-10"><input name="jumlah_sasaran_kerja_pegawai" id="exampleEmail" placeholder="Jumlah Orientasi Pelayanan" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah_sasaran_kerja_pegawai" id="exampleEmail" placeholder="Jumlah Orientasi Pelayanan" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Orientasi Pelayanan</b></label>
-                                                <div class="col-sm-10"><input name="jumlah_orientasi_pelayanan" id="exampleEmail" placeholder="Jumlah Orientasi Pelayanan" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah_orientasi_pelayanan" id="exampleEmail" placeholder="Jumlah Orientasi Pelayanan" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Integritas</b></label>
-                                                <div class="col-sm-10"><input name="jumlah_integritas" id="exampleEmail" placeholder="Jumlah Integritas" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah_integritas" id="exampleEmail" placeholder="Jumlah Integritas" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Komitmen</b></label>
-                                                <div class="col-sm-10"><input name="jumlah_komitmen" id="exampleEmail" placeholder="Jumlah Komitmen" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah_komitmen" id="exampleEmail" placeholder="Jumlah Komitmen" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Disiplin</b></label>
-                                                <div class="col-sm-10"><input name="jumlah_disiplin" id="exampleEmail" placeholder="Jumlah Disiplin" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah_disiplin" id="exampleEmail" placeholder="Jumlah Disiplin" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Kerjasama</b></label>
-                                                <div class="col-sm-10"><input name="jumlah_kerjasama" id="exampleEmail" placeholder="Jumlah Kerjasama" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah_kerjasama" id="exampleEmail" placeholder="Jumlah Kerjasama" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Kepemimpinan</b></label>
-                                                <div class="col-sm-10"><input name="jumlah_kepemimpinan" id="exampleEmail" placeholder="Jumlah Kepemimpinan" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah_kepemimpinan" id="exampleEmail" placeholder="Jumlah Kepemimpinan" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah jumlah</b></label>
-                                                <div class="col-sm-10"><input name="jumlah_jumlah" id="exampleEmail" placeholder="Jumlah jumlah" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah_jumlah" id="exampleEmail" placeholder="Jumlah jumlah" type="text" class="form-control" value="" required></div>          
                                             </div>                  
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Rata - Rata</b></label>
-                                                <div class="col-sm-10"><input name="jumlah_rata_rata" id="exampleEmail" placeholder="Jumlah Rata - Rata" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah_rata_rata" id="exampleEmail" placeholder="Jumlah Rata - Rata" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Nilai Perilaku kerja</b></label>
-                                                <div class="col-sm-10"><input name="jumlah_nilai_perilaku_kerja" id="exampleEmail" placeholder="Jumlah Nilai Perilaku kerja" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="jumlah_nilai_perilaku_kerja" id="exampleEmail" placeholder="Jumlah Nilai Perilaku kerja" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Prestasi Kerja 1</b></label>
-                                                <div class="col-sm-10"><input name="nilai_prestasi_kerja_1" id="exampleEmail" placeholder="Jumlah Prestasi Kerja 1" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><input name="nilai_prestasi_kerja_1" id="exampleEmail" placeholder="Jumlah Prestasi Kerja 1" type="text" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Prestasi Kerja 2</b></label>
-                                                <div class="col-sm-10"><input name="nilai_prestasi_kerja_2" id="exampleEmail" placeholder="Jumlah Prestasi Kerja 2" type="number" class="form-control" value="" required></div>          
-                                            </div>
+                                                <div class="col-sm-10"><input name="nilai_prestasi_kerja_2" id="exampleEmail" placeholder="Jumlah Prestasi Kerja 2" type="text" class="form-control" value="" required></div>          
+                                            </div> -->
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Keberatan Pegawai</b></label>
-                                                <div class="col-sm-10"><input name="keberatan_pegawai" id="exampleEmail" placeholder="Keberatan Pegawai" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><textarea name="keberatan_pegawai" id="exampleEmail" placeholder="Keberatan Pegawai" type="text" class="form-control" value="" required></textarea></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Tanggal Keberatan Pegawai</b></label>
                                                 <div class="col-sm-10"><input name="tanggal_keberatan_pegawai" id="exampleEmail" placeholder="Tanggal Keberatan Pegawai" type="date" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Tanggapan Pejabat</b></label>
-                                                <div class="col-sm-10"><input name="tanggapan_pejabat" id="exampleEmail" placeholder="Tanggapan Pejabat" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><textarea name="tanggapan_pejabat" id="exampleEmail" placeholder="Tanggapan Pejabat" type="text" class="form-control" value="" required></textarea></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Tanggal Tanggapan Pejabat</b></label>
                                                 <div class="col-sm-10"><input name="tanggal_tanggapan_pejabat" id="exampleEmail" placeholder="Tanggal Tanggapan Pejabat" type="date" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Keputusan Atasan Pejabat</b></label>
-                                                <div class="col-sm-10"><input name="keputusan_atasan_pejabat" id="exampleEmail" placeholder="Keputusan Atasan Pejabat" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><textarea name="keputusan_atasan_pejabat" id="exampleEmail" placeholder="Keputusan Atasan Pejabat" type="text" class="form-control" value="" required></textarea></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Tanggal Keputusan Atasan Pejabat</b></label>
                                                 <div class="col-sm-10"><input name="tanggal_keputusan_atasan_pejabat" id="exampleEmail" placeholder="Keputusan Atasan Pejabat" type="date" class="form-control" value="" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Rekomendasi</b></label>
-                                                <div class="col-sm-10"><input name="rekomendasi" id="exampleEmail" placeholder="Rekomendasi" type="number" class="form-control" value="" required></div>          
+                                                <div class="col-sm-10"><textarea name="rekomendasi" id="exampleEmail" placeholder="Rekomendasi" type="number" class="form-control" value="" required></textarea></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Dibuat Tanggal Pejabat Penilai</b></label>
                                                 <div class="col-sm-10"><input name="dibuat_tanggal_pejabat_penilai" id="exampleEmail" placeholder="Dibuat Tanggal Pejabat Penilai" type="date" class="form-control" value="" required></div>          
@@ -377,8 +334,8 @@
                                                                             @endif
                                                                         </select></div>          
                                             </div> 
-                                            <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Sarana Kerja Pegawai</b></label>
-                                                <div class="col-sm-10"><input name="sasaran_kerja_pegawai" id="exampleEmail" placeholder="Sarana Kerja Pegawai" type="number" class="form-control" value="{{$penilaian_skps->sasaran_kerja_pegawai}}" required></div>          
+                                            <!-- <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Sasaran Kerja Pegawai</b></label>
+                                                <div class="col-sm-10"><input name="sasaran_kerja_pegawai" id="exampleEmail" placeholder="Sasaran Kerja Pegawai" type="number" class="form-control" value="{{$penilaian_skps->sasaran_kerja_pegawai}}" required></div>          
                                             </div> 
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Orientasi Pelayanan</b></label>
                                                 <div class="col-sm-10"><input name="orientasi_pelayanan" id="exampleEmail" placeholder="Orientasi Pelayanan" type="number" class="form-control" value="{{$penilaian_skps->orientasi_pelayanan}}" required></div>          
@@ -442,27 +399,27 @@
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Jumlah Prestasi Kerja 2</b></label>
                                                 <div class="col-sm-10"><input name="nilai_prestasi_kerja_2" id="exampleEmail" placeholder="Jumlah Prestasi Kerja 2" type="number" class="form-control" value="{{$penilaian_skps->nilai_prestasi_kerja_2}}" required></div>          
-                                            </div>
+                                            </div> -->
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Keberatan Pegawai</b></label>
-                                                <div class="col-sm-10"><input name="keberatan_pegawai" id="exampleEmail" placeholder="Keberatan Pegawai" type="number" class="form-control" value="{{$penilaian_skps->keberatan_pegawai}}" required></div>          
+                                                <div class="col-sm-10"><textarea name="keberatan_pegawai" id="exampleEmail" placeholder="Keberatan Pegawai" type="number" class="form-control" value="{{$penilaian_skps->keberatan_pegawai}}" required>{{$penilaian_skps->keberatan_pegawai}}</textarea></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Tanggal Keberatan Pegawai</b></label>
                                                 <div class="col-sm-10"><input name="tanggal_keberatan_pegawai" id="exampleEmail" placeholder="Tanggal Keberatan Pegawai" type="date" class="form-control" value="{{ date('Y-m-d',strtotime($penilaian_skps->tanggal_keberatan_pegawai)) }}" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Tanggapan Pejabat</b></label>
-                                                <div class="col-sm-10"><input name="tanggapan_pejabat" id="exampleEmail" placeholder="Tanggapan Pejabat" type="number" class="form-control" value="{{$penilaian_skps->tanggapan_pejabat}}" required></div>          
+                                                <div class="col-sm-10"><textarea name="tanggapan_pejabat" id="exampleEmail" placeholder="Tanggapan Pejabat" type="number" class="form-control" value="{{$penilaian_skps->tanggapan_pejabat}}" required>{{$penilaian_skps->tanggapan_pejabat}}</textarea></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Tanggal Tanggapan Pejabat</b></label>
                                                 <div class="col-sm-10"><input name="tanggal_tanggapan_pejabat" id="exampleEmail" placeholder="Tanggal Tanggapan Pejabat" type="date" class="form-control" value="{{ date('Y-m-d',strtotime($penilaian_skps->tanggal_tanggapan_pejabat)) }}" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Keputusan Atasan Pejabat</b></label>
-                                                <div class="col-sm-10"><input name="keputusan_atasan_pejabat" id="exampleEmail" placeholder="Keputusan Atasan Pejabat" type="number" class="form-control" value="{{$penilaian_skps->keputusan_atasan_pejabat}}" required></div>          
+                                                <div class="col-sm-10"><textarea name="keputusan_atasan_pejabat" id="exampleEmail" placeholder="Keputusan Atasan Pejabat" type="number" class="form-control" value="{{$penilaian_skps->keputusan_atasan_pejabat}}" required>{{$penilaian_skps->keputusan_atasan_pejabat}}</textarea></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Tanggal Keputusan Atasan Pejabat</b></label>
                                                 <div class="col-sm-10"><input name="tanggal_keputusan_atasan_pejabat" id="exampleEmail" placeholder="Keputusan Atasan Pejabat" type="date" class="form-control" value="{{ date('Y-m-d',strtotime($penilaian_skps->tanggal_keputusan_atasan_pejabat)) }}" required></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Rekomendasi</b></label>
-                                                <div class="col-sm-10"><input name="rekomendasi" id="exampleEmail" placeholder="Rekomendasi" type="number" class="form-control" value="{{$penilaian_skps->rekomendasi}}" required></div>          
+                                                <div class="col-sm-10"><textarea name="rekomendasi" id="exampleEmail" placeholder="Rekomendasi" type="number" class="form-control" value="{{$penilaian_skps->rekomendasi}}" required>{{$penilaian_skps->rekomendasi}}</textarea></div>          
                                             </div>
                                             <div class="position-relative row form-group"><label for="exampleEmail" class="col-sm-2 col-form-label"><b>Dibuat Tanggal Pejabat Penilai</b></label>
                                                 <div class="col-sm-10"><input name="dibuat_tanggal_pejabat_penilai" id="exampleEmail" placeholder="Dibuat Tanggal Pejabat Penilai" type="date" class="form-control" value="{{ date('Y-m-d',strtotime($penilaian_skps->dibuat_tanggal_pejabat_penilai)) }}" required></div>          
