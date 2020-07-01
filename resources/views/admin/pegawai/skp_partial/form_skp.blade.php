@@ -1,4 +1,4 @@
-<div id="formSkp" style="display:;">
+<div id="formSkp" style="display:none;">
     <div class="text-center titlepertab">Formulir Sasaran Kerja<br /> Pegawai negeri Sipil</div>
 @if ($countFormSkp === 0)
         <h5 class="text-center" style="color: red;">PEGAWAI BELUM MENGISI DATA FORMULIR SASARAN KERJA PEGAWAI NEGERI SIPIL PADA PERIODE {{$periode->tahun}} {{$periode->periode}}</h5>

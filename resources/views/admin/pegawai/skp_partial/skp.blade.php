@@ -1,4 +1,4 @@
-<div id="dataSkp" style="display:none;">
+<div id="dataSkp" style="">
     <div class="text-center titlepertab">Data Sasaran Kerja Pegawai</div>
     @if (empty($skp))
         <h5 class="text-center" style="color: red;">PEGAWAI BELUM MENGISI DATA SKP PADA PERIODE {{$periode->tahun}} {{$periode->periode}}</h5>

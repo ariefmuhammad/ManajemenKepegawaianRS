@@ -16,11 +16,20 @@
         .width100px{
             width: 100px;
         }
+        .width30{
+            width: 30px;
+        }
         .width40{
             width: 40px;
         }
         .width200{
             width: 200px;
+        }
+        .width700{
+            width: 700px;
+        }
+        .width1000{
+            width:  1000px;
         }
         .margintop20 {
             margin-top: 20px;
@@ -30,6 +39,13 @@
         }
         .sidetable{
             background-image: url(/lojin/sidebarx.png);
+            background-repeat: no-repeat;
+            width: 500px;
+            height: 41px;
+            color: #ffffff;
+        }
+        .sidetable350{
+            background-image: url(/lojin/sidebarx350.png);
             background-repeat: no-repeat;
             width: 500px;
             height: 41px;
@@ -86,16 +102,24 @@
                         </div>
                         <hr />
                         <div class="text-center">
-                            <select name="tahun" class="mb-2 mr-2 btn-transition btn btn-outline-dark" >
-                                @foreach ($tahun as $item)
-                                    <option value="{{$item}}" {{$periode->tahun == $item  ? 'selected' : ''}}>{{$item}}</option>
-                                @endforeach
-                            </select>
-                            <select name="kategori" class="mb-2 mr-2 btn-transition btn btn-outline-dark">
-                                <option value="semester1" {{$periode->periode == 'Semester 1'  ? 'selected' : ''}}>Semester 1</option>
-                                <option value="semester2" {{$periode->periode == 'Semester 2'  ? 'selected' : ''}}>Semester 2</option>
-                                <option value="setahun" {{$periode->periode == 'Setahun'  ? 'selected' : ''}}>Setahun</option>
-                            </select>
+                            @if(auth()->user()->level == 'ADMIN')
+                                <form action="/it/pegawai/{{ $pegawai->id }}/skp" method="post">
+                            @else
+                                <form action="/admin/pegawai/{{ $pegawai->id }}/skp" method="post">
+                            @endif
+                                @csrf
+                                <select name="tahun" class="mb-2 mr-2 btn-transition btn btn-outline-dark" >
+                                    @foreach ($tahun as $item)
+                                        <option value="{{$item}}" {{$periode->tahun == $item  ? 'selected' : ''}}>{{$item}}</option>
+                                    @endforeach
+                                </select>
+                                <select name="kategori" class="mb-2 mr-2 btn-transition btn btn-outline-dark">
+                                    <option value="semester1" {{$periode->periode == 'Semester 1'  ? 'selected' : ''}}>Semester 1</option>
+                                    <option value="semester2" {{$periode->periode == 'Semester 2'  ? 'selected' : ''}}>Semester 2</option>
+                                    <option value="setahun" {{$periode->periode == 'Setahun'  ? 'selected' : ''}}>Setahun</option>
+                                </select>
+                                <button id="search" type="submit" style="display: none;">x</button>
+                            </form>
                         </div>
                         <div class="text-center">
                             <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-alternate active" id="data_skpB">Data SKP</button>
@@ -107,6 +131,8 @@
                         @include('admin.pegawai.skp_partial.skp')
                         @include('admin.pegawai.skp_partial.form_skp')
                         @include('admin.pegawai.skp_partial.pengukuran')
+                        @include('admin.pegawai.skp_partial.perilaku_kerja')
+                        @include('admin.pegawai.skp_partial.penilaian')
                     </div>
                 </div>
             </div>
@@ -144,4 +170,12 @@
             });
         } );
     </script>
+    <script>
+        $(document).ready(function(){
+            $("select").change(function(){
+                $("#search").click();
+            });
+        });
+    </script>
+    @include('admin.pegawai.skp_partial.hide_show')
 @endpush
