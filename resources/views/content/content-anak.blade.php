@@ -57,7 +57,7 @@
                                                 Wanita
                                                 @endif</td> -->
                                                 <!-- <td>{{$anaks->tempat_lahir}}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($anaks->tanggal_lahir)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($anaks->tanggal_lahir)->translatedFormat('d F Y') }}</td> -->
                                                 <!-- <td>
                                                 @if($anaks->status_anak == "1")
                                                 Anak Kandung

@@ -49,11 +49,11 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL SK</th>
-                            <td><b>{{ date('d/m/Y',strtotime($hukum_disiplins->tanggal_sk)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($hukum_disiplins->tanggal_sk)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TMT BERLAKU</th>
-                            <td><b>{{ date('d/m/Y',strtotime($hukum_disiplins->tmt_berlaku)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($hukum_disiplins->tmt_berlaku)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">PEJABAT PEMBUAT SK</th>

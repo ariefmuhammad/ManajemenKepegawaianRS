@@ -28,7 +28,7 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TMT GOLONGAN/RUANG</th>
-                            <td><b>{{ date('d/m/Y',strtotime($riwayat_kepangkatans->tmt_golongan)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($riwayat_kepangkatans->tmt_golongan)->translatedFormat('d F Y')}}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">PEJABAT PENANDATANGAN SK</th>
@@ -40,7 +40,7 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL SK</th>
-                            <td><b>{{ date('d/m/Y',strtotime($riwayat_kepangkatans->tanggal_sk)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($riwayat_kepangkatans->tanggal_sk)->translatedFormat('d F Y')}}</b></td>
                         </tr>
                     </tbody>
                 </table>

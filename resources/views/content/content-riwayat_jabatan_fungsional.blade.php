@@ -50,9 +50,9 @@
                                                 <!-- <td>{{$riwayat_jabatan_fungsionals->tahun}}</td> -->
                                                 <!-- <td>{{$riwayat_jabatan_fungsionals->eselon}}</td> -->
                                                 <td>{{$riwayat_jabatan_fungsionals->nama_jabatan}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_jabatan_fungsionals->tmt_jabatan)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_jabatan_fungsionals->tmt_jabatan)->translatedFormat('d F Y')}}</td> -->
                                                 <td>{{$riwayat_jabatan_fungsionals->nomor_sk}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_jabatan_fungsionals->tanggal_sk)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_jabatan_fungsionals->tanggal_sk)->translatedFormat('d F Y')}}</td> -->
                                                 <!-- <td>{{$riwayat_jabatan_fungsionals->pejabat_penandatangan_sk}}</td> -->
                                                 <td>
                                                     <span data-toggle="tooltip" data-placement="top" title="Lebih Lengkap Data"><button class="mb-2 mr-2 btn-transition btn btn-outline-alternate" data-toggle="modal" data-target="#exampleModalLargeDetail-{{$riwayat_jabatan_fungsionals->id}}"> <i class="fa fa-fw" aria-hidden="true"></i>  

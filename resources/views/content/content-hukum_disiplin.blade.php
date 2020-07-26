@@ -67,8 +67,8 @@
                                                 @endif
                                                 </td>
                                                 <td>{{$hukum_disiplins->nomor_sk}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($hukum_disiplins->tanggal_sk)) }}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($hukum_disiplins->tmt_berlaku)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($hukum_disiplins->tanggal_sk)->translatedFormat('d F Y') }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($hukum_disiplins->tmt_berlaku)->translatedFormat('d F Y') }}</td> -->
                                                 <!-- <td>{{$hukum_disiplins->pejabat_pembuat_sk}}</td> -->
                                                 <td>
                                                     <span data-toggle="tooltip" data-placement="top" title="Lebih Lengkap Data"><button class="mb-2 mr-2 btn-transition btn btn-outline-alternate" data-toggle="modal" data-target="#exampleModalLargeDetail-{{$hukum_disiplins->id}}"> <i class="fa fa-fw" aria-hidden="true"></i>  

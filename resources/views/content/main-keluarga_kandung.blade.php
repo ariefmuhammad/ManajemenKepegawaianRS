@@ -45,7 +45,7 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL LAHIR</th>
-                            <td><b>{{ date('d/m/Y',strtotime($keluarga_kandungs->tanggal_lahir)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($keluarga_kandungs->tanggal_lahir)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">JENIS KELAMIN</th>

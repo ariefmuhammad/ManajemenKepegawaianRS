@@ -63,8 +63,8 @@
                                                 </td>
                                                 <!-- <td>{{$riwayat_diklat_penjenjangan_strukturals->angkatan}}</td> -->
                                                 <td>{{$riwayat_diklat_penjenjangan_strukturals->lokasi}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_diklat_penjenjangan_strukturals->tanggal_mulai)) }}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_diklat_penjenjangan_strukturals->tanggal_selesai)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_diklat_penjenjangan_strukturals->tanggal_mulai)->translatedFormat('d F Y')}}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_diklat_penjenjangan_strukturals->tanggal_selesai)->translatedFormat('d F Y')}}</td> -->
                                                 <!-- <td>{{$riwayat_diklat_penjenjangan_strukturals->jumlah_jam}}</td> -->
                                                 <!-- <td>{{$riwayat_diklat_penjenjangan_strukturals->penyelenggara}}</td> -->
                                                 <!-- <td>{{$riwayat_diklat_penjenjangan_strukturals->predikat}}</td> -->

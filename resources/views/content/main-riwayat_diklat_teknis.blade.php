@@ -40,11 +40,11 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL MULAI</th>
-                            <td><b>{{ date('d/m/Y',strtotime($riwayat_diklat_tekniss->tanggal_mulai)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($riwayat_diklat_tekniss->tanggal_mulai)->translatedFormat('d F Y')}}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL SELESAI</th>
-                            <td><b>{{ date('d/m/Y',strtotime($riwayat_diklat_tekniss->tanggal_selesai)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($riwayat_diklat_tekniss->tanggal_selesai)->translatedFormat('d F Y')}}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">JUMLAH JAM</th>

@@ -52,9 +52,9 @@
                                                 <!-- <td>{{$riwayat_jabatan_strukturals->eselon}}</td> -->
                                                 <td>{{$riwayat_jabatan_strukturals->nama_jabatan}}</td>
                                                 <td>{{$riwayat_jabatan_strukturals->unit_kerja}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_jabatan_strukturals->tmt_jabatan)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_jabatan_strukturals->tmt_jabatan)->translatedFormat('d F Y')}}</td> -->
                                                 <!-- <td>{{$riwayat_jabatan_strukturals->nomor_sk}}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_jabatan_strukturals->tanggal_sk)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_jabatan_strukturals->tanggal_sk)->translatedFormat('d F Y')}}</td> -->
                                                 <!-- <td>{{$riwayat_jabatan_strukturals->pejabat_penandatangan_sk}}</td> -->
                                                 <td>
                                                 <span data-toggle="tooltip" data-placement="top" title="Lebih Lengkap Data"><button class="mb-2 mr-2 btn-transition btn btn-outline-alternate" data-toggle="modal" data-target="#exampleModalLargeDetail-{{$riwayat_jabatan_strukturals->id}}"> <i class="fa fa-fw" aria-hidden="true"></i>  

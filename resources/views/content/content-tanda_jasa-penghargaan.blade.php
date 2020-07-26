@@ -48,7 +48,7 @@
                                                 <th scope="row">{{++$no}}</th>
                                                 <!-- <td>{{$tanda_jasa_penghargaans->tahun}}</td> -->
                                                 <td>{{$tanda_jasa_penghargaans->nama_penghargaan}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($tanda_jasa_penghargaans->tanggal_perolehan)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($tanda_jasa_penghargaans->tanggal_perolehan)->translatedFormat('d F Y') }}</td> -->
                                                 <!-- <td>{{$tanda_jasa_penghargaans->nomor}}</td> -->
                                                 <!-- <td>{{$tanda_jasa_penghargaans->pemberi}}</td> -->
                                                 <td>{{$tanda_jasa_penghargaans->jabatan_pemberi}}</td>

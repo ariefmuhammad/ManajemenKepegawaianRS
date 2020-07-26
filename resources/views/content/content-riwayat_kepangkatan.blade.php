@@ -48,10 +48,10 @@
                                                 <th scope="row">{{++$no}}</th>
                                                 <!-- <td>{{$riwayat_kepangkatans->tahun}}</td> -->
                                                 <td>{{$riwayat_kepangkatans->golongan}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_kepangkatans->tmt_golongan)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_kepangkatans->tmt_golongan)->translatedFormat('d F Y')}}</td> -->
                                                 <!-- <td>{{$riwayat_kepangkatans->pejabat_penandatangan_sk}}</td> -->
                                                 <td>{{$riwayat_kepangkatans->nomor_sk}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_kepangkatans->tanggal_sk)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_kepangkatans->tanggal_sk)->translatedFormat('d F Y')}}</td> -->
                                                 <td>
                                                 <span data-toggle="tooltip" data-placement="top" title="Lebih Lengkap Data"><button class="mb-2 mr-2 btn-transition btn btn-outline-alternate" data-toggle="modal" data-target="#exampleModalLargeDetail-{{$riwayat_kepangkatans->id}}"> <i class="fa fa-fw" aria-hidden="true"></i>  
                                                     </button></span>||&nbsp;

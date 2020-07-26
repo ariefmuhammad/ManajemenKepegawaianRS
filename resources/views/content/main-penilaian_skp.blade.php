@@ -121,7 +121,7 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL KEBERATAN PEGAWAI</th>
-                            <td><b>{{ date('d/m/Y',strtotime($penilaian_skps->tanggal_keberatan_pegawai)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($penilaian_skps->tanggal_keberatan_pegawai)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAPAN PEJABAT</th>
@@ -129,7 +129,7 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL TANGGAPAN PEJABAT</th>
-                            <td><b>{{ date('d/m/Y',strtotime($penilaian_skps->tanggal_tanggapan_pejabat)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($penilaian_skps->tanggal_tanggapan_pejabat)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">KEPUTUSAN ATASAN PEJABAT</th>
@@ -137,7 +137,7 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL KEPUTUSAN ATASAN PEJABAT</th>
-                            <td><b>{{ date('d/m/Y',strtotime($penilaian_skps->tanggal_keputusan_atasan_pejabat)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($penilaian_skps->tanggal_keputusan_atasan_pejabat)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">REKOMENDASI</th>
@@ -145,15 +145,15 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">DIBUAT TANGGAL PEJABAT PENILAI</th>
-                            <td><b>{{ date('d/m/Y',strtotime($penilaian_skps->dibuat_tanggal_pejabat_penilai)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($penilaian_skps->dibuat_tanggal_pejabat_penilai)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">DITERIMA TANGGAL PEGAWAI</th>
-                            <td><b>{{ date('d/m/Y',strtotime($penilaian_skps->diterima_tanggal_pegawai)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($penilaian_skps->diterima_tanggal_pegawai)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">DITERIMA TANGGAL ATASAN PEJABAT PENILAI</th>
-                            <td><b>{{ date('d/m/Y',strtotime($penilaian_skps->diterima_tanggal_atasan_pejabat_penilai)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($penilaian_skps->diterima_tanggal_atasan_pejabat_penilai)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                     </tbody>
                 </table>

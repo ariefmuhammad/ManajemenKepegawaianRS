@@ -51,8 +51,8 @@
                                                 <!-- <td>{{$keanggotaan_organisasis->tahun_organisasi}}</td> -->
                                                 <td>{{$keanggotaan_organisasis->nama_organisasi}}</td>
                                                 <td>{{$keanggotaan_organisasis->kedudukan}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($keanggotaan_organisasis->tanggal_mulai)) }}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($keanggotaan_organisasis->tanggal_selesai)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($keanggotaan_organisasis->tanggal_mulai)->translatedFormat('d F Y') }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($keanggotaan_organisasis->tanggal_selesai)->translatedFormat('d F Y') }}</td> -->
                                                 <!-- <td>{{$keanggotaan_organisasis->nomor_sk}}</td> -->
                                                 <!-- <td>{{$keanggotaan_organisasis->jabatan_pembuat_sk}}</td> -->
                                                 <td>

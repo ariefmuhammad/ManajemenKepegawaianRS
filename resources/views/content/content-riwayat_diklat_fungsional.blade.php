@@ -57,8 +57,8 @@
                                                     @endif
                                                 </td> -->
                                                 <td>{{$riwayat_diklat_fungsionals->lokasi}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_diklat_fungsionals->tanggal_mulai)) }}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_diklat_fungsionals->tanggal_selesai)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_diklat_fungsionals->tanggal_mulai)->translatedFormat('d F Y')}}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_diklat_fungsionals->tanggal_selesai)->translatedFormat('d F Y')}}</td> -->
                                                 <!-- <td>{{$riwayat_diklat_fungsionals->jumlah_jam}}</td> -->
                                                 <!-- <td>{{$riwayat_diklat_fungsionals->penyelenggara}}</td> -->
                                                 <td>

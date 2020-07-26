@@ -35,11 +35,11 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL LAHIR ISTRI</th>
-                            <td><b>{{ date('d/m/Y',strtotime($istri_suamis->tanggal_lahir)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($istri_suamis->tanggal_lahir)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL NIKAH</th>
-                            <td><b>{{ date('d/m/Y',strtotime($istri_suamis->tanggal_nikah)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($istri_suamis->tanggal_nikah)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TINGKAT PENDIDIKAN ISTRI</th>
@@ -117,11 +117,11 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL LAHIR SUAMI</th>
-                            <td><b>{{ date('d/m/Y',strtotime($istri_suamis->tanggal_lahir)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($istri_suamis->tanggal_lahir)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL NIKAH</th>
-                            <td><b>{{ date('d/m/Y',strtotime($istri_suamis->tanggal_nikah)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($istri_suamis->tanggal_nikah)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TINGKAT PENDIDIKAN SUAMI</th>

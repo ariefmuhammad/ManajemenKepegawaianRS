@@ -45,7 +45,7 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL LAHIR</th>
-                            <td><b>{{ date('d/m/Y',strtotime($keluarga_istri_suamis->tanggal_lahir)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($keluarga_istri_suamis->tanggal_lahir)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">JENIS KELAMIN</th>
@@ -108,11 +108,11 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">PEKERJAAN</th>
-                            <td>{{$keluarga_istri_suamis->pekerjaan}}</td>
+                            <td><b>{{$keluarga_istri_suamis->pekerjaan}}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL LAHIR</th>
-                            <td><b>{{ date('d/m/Y',strtotime($keluarga_istri_suamis->tanggal_lahir)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($keluarga_istri_suamis->tanggal_lahir)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">JENIS KELAMIN</th>

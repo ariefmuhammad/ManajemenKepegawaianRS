@@ -84,7 +84,7 @@
             </tr>
             <tr>
                 <th scope="row" class="sidetable">TANGGAL LAHIR</th>
-                <td><b>{{ date('d/m/Y',strtotime($pegawais->tanggal_lahir)) }}</b></td>
+                <td><b>{{ \Carbon\Carbon::parse($pegawais->tanggal_lahir)->translatedFormat('d F Y')}}</b></td>
             </tr>
             <tr>
                 <th scope="row" class="sidetable">JENIS KELAMIN</th>
@@ -174,7 +174,7 @@
             </tr>
             <tr>
                 <th scope="row" class="sidetable">TMT CALON PEGAWAI NEGERI SIPIL</th>
-                <td><b>{{ date('d/m/Y',strtotime($pegawais->tmt_cpns)) }}</b></td>
+                <td><b>{{ \Carbon\Carbon::parse($pegawais->tmt_cpns)->translatedFormat('d F Y')}}</b></td>
             </tr>
             <tr>
                 <th scope="row" class="sidetable">GOLONGAN / RUANG TERAKHIR</th>
@@ -182,7 +182,7 @@
             </tr>
             <tr>
                 <th scope="row" class="sidetable">TMT GOLONGAN</th>
-                <td><b>{{ date('d/m/Y',strtotime($pegawais->tmt_golongan)) }}</b></td>
+                <td><b>{{ \Carbon\Carbon::parse($pegawais->tmt_golongan)->translatedFormat('d F Y')}}</b></td>
             </tr>
             <tr>
                 <th scope="row" class="sidetable">NAMA JABATAN</th>
@@ -232,7 +232,7 @@
             </tr>
             <tr>
                 <th scope="row" class="sidetable">MASA BERLAKU STR</th>
-                <td><b>{{ date('d/m/Y',strtotime($pegawais->masa_str)) }}</b></td>
+                <td><b>{{ \Carbon\Carbon::parse($pegawais->masa_str)->translatedFormat('d F Y')}}</b></td>
             </tr>
             <tr>
                 <th scope="row" class="sidetable">NOMOR SIKP (SURAT IZIN KERJA PERAWAT)</th>
@@ -240,7 +240,7 @@
             </tr>
             <tr>
                 <th scope="row" class="sidetable">MASA BERLAKU SIKP</th>
-                <td><b>{{ date('d/m/Y',strtotime($pegawais->masa_sikp)) }}</b></td>
+                <td><b>{{ \Carbon\Carbon::parse($pegawais->masa_sikp)->translatedFormat('d F Y')}}</b></td>
             </tr>
             <tr>
                 <th scope="row" class="sidetable">NOMOR SPK (SURAT PENUGASAAN KEWENANGAN KLINIS)</th>
@@ -248,7 +248,7 @@
             </tr>
             <tr>
                 <th scope="row" class="sidetable">MASA BERLAKU SPK</th>
-                <td><b>{{ date('d/m/Y',strtotime($pegawais->masa_spk)) }}</b></td>
+                <td><b>{{ \Carbon\Carbon::parse($pegawais->masa_spk)->translatedFormat('d F Y')}}</b></td>
             </tr>
             <tr>
                 <th scope="row" class="sidetable">NOMOR RKK (RINCIAN KEWENANGAN KLINIS)</th>
@@ -256,7 +256,7 @@
             </tr>
             <tr>
                 <th scope="row" class="sidetable">MASA BERLAKU RKK</th>
-                <td><b>{{ date('d/m/Y',strtotime($pegawais->masa_rkk)) }}</b></td>
+                <td><b>{{ \Carbon\Carbon::parse($pegawais->masa_rkk)->translatedFormat('d F Y')}}</b></td>
             </tr>
         </tbody>
     </table>

@@ -70,8 +70,8 @@
                                                 <!-- <td>{{$istri_suamis->tahun}}</td> -->
                                                 <td>{{$istri_suamis->nama}}</td>
                                                 <!-- <td>{{$istri_suamis->nomor_karis_karsu}}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($istri_suamis->tanggal_lahir)) }}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($istri_suamis->tanggal_nikah)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($istri_suamis->tanggal_lahir)->translatedFormat('d F Y') }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($istri_suamis->tanggal_nikah)->translatedFormat('d F Y') }}</td> -->
                                                 <!-- <td>
                                                 @if($istri_suamis->tingkat_pendidikan == "01") 
                                                 S3 (Setara)                                             

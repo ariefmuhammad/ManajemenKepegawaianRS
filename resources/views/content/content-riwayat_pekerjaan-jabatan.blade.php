@@ -50,9 +50,9 @@
                                                 <th scope="row">{{++$no}}</th>
                                                 <!-- <td>{{$riwayat_pekerjaan_jabatans->tahun}}</td> -->
                                                 <td>{{$riwayat_pekerjaan_jabatans->nama_jabatan}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_pekerjaan_jabatans->tmt_jabatan)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_pekerjaan_jabatans->tmt_jabatan)->translatedFormat('d F Y')}}</td> -->
                                                 <td>{{$riwayat_pekerjaan_jabatans->nomor_sk}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($riwayat_pekerjaan_jabatans->tanggal_sk)) }} </td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($riwayat_pekerjaan_jabatans->tanggal_sk)->translatedFormat('d F Y')}}</td> -->
                                                 <!-- <td>{{$riwayat_pekerjaan_jabatans->tahun_mulai}}</td> -->
                                                 <!-- <td>{{$riwayat_pekerjaan_jabatans->tahun_selesai}}</td>                    -->
                                                 <!-- <td>{{$riwayat_pekerjaan_jabatans->nip_pejabat_penandatangan_sk}}</td> -->

@@ -72,7 +72,7 @@
                                                 @endif
                                                 </td>
                                                 <!-- <td>{{$keluarga_istri_suamis->pekerjaan}}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($keluarga_istri_suamis->tanggal_lahir)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($keluarga_istri_suamis->tanggal_lahir)->translatedFormat('d F Y') }}</td> -->
                                                 <!-- <td>
                                                 @if($keluarga_istri_suamis->jenis_kelamin == "L")
                                                 Laki-laki                                                

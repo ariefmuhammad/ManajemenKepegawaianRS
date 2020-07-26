@@ -28,7 +28,7 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL PEROLEHAN</th>
-                            <td><b>{{ date('d/m/Y',strtotime($tanda_jasa_penghargaans->tanggal_perolehan)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($tanda_jasa_penghargaans->tanggal_perolehan)->translatedFormat('d F Y') }}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">NOMOR</th>

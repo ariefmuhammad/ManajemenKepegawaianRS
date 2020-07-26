@@ -33,7 +33,7 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TMT JABATAN</th>
-                            <td><b>{{ date('d/m/Y',strtotime($riwayat_jabatan_fungsionals->tmt_jabatan)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($riwayat_jabatan_fungsionals->tmt_jabatan)->translatedFormat('d F Y')}}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">NOMOR SK</th>
@@ -41,7 +41,7 @@
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">TANGGAL SK</th>
-                            <td><b>{{ date('d/m/Y',strtotime($riwayat_jabatan_fungsionals->tanggal_sk)) }}</b></td>
+                            <td><b>{{ \Carbon\Carbon::parse($riwayat_jabatan_fungsionals->tanggal_sk)->translatedFormat('d F Y')}}</b></td>
                         </tr>
                         <tr>
                             <th scope="row" class="sidetable">PEJABAT PENANDATANGAN SK</th>

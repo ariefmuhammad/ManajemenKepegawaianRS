@@ -98,15 +98,15 @@
                                                 <!-- <td>{{$penilaian_skps->nilai_prestasi_kerja_1}}</td> -->
                                                 <!-- <td>{{$penilaian_skps->nilai_prestasi_kerja_2}}</td> -->
                                                 <!-- <td>{{$penilaian_skps->keberatan_pegawai}}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($penilaian_skps->tanggal_keberatan_pegawai)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($penilaian_skps->tanggal_keberatan_pegawai)->translatedFormat('d F Y') }}</td> -->
                                                 <td>{{$penilaian_skps->tanggapan_pejabat}}</td>
-                                                <!-- <td>{{ date('d/m/Y',strtotime($penilaian_skps->tanggal_tanggapan_pejabat)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($penilaian_skps->tanggal_tanggapan_pejabat)->translatedFormat('d F Y') }}</td> -->
                                                 <!-- <td>{{$penilaian_skps->keputusan_atasan_pejabat}}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($penilaian_skps->tanggal_keputusan_atasan_pejabat)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($penilaian_skps->tanggal_keputusan_atasan_pejabat)->translatedFormat('d F Y') }}</td> -->
                                                 <!-- <td>{{$penilaian_skps->rekomendasi}}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($penilaian_skps->dibuat_tanggal_pejabat_penilai)) }}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($penilaian_skps->diterima_tanggal_pegawai)) }}</td> -->
-                                                <!-- <td>{{ date('d/m/Y',strtotime($penilaian_skps->diterima_tanggal_atasan_pejabat_penilai)) }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($penilaian_skps->dibuat_tanggal_pejabat_penilai)->translatedFormat('d F Y') }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($penilaian_skps->diterima_tanggal_pegawai)->translatedFormat('d F Y') }}</td> -->
+                                                <!-- <td>{{ \Carbon\Carbon::parse($penilaian_skps->diterima_tanggal_atasan_pejabat_penilai)->translatedFormat('d F Y') }}</td> -->
                                                 <td>
                                                     <span data-toggle="tooltip" data-placement="top" title="Lebih Lengkap Data"><button class="mb-2 mr-2 btn-transition btn btn-outline-alternate" data-toggle="modal" data-target="#exampleModalLargeDetail-{{$penilaian_skps->id}}"> <i class="fa fa-fw" aria-hidden="true"></i>  
                                                     </button></span>||&nbsp;
